@@ -23,3 +23,5 @@ Run in debug mode:
 Or build app:
 
     gulp build
+    
+After adding platforms and building with `gulp build`, you can build cordova apps. Same code for website and application.
