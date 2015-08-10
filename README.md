@@ -2,14 +2,14 @@ Create cordova app:
 
     cordova create mobile com.example.requester Requester
 
+Install internal npm modules:
+
+    npm install
+
 Install global npm modules:
 
     npm install -g ngpack
     npm install -g gulp
-
-Install internal npm modules:
-
-    npm install
 
 Fix ngpack linux bug:
 
