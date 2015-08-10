@@ -1,0 +1,37 @@
+<div ng-form="requestForm">
+    <div>
+        <label>url</label>
+        <input type="text" ng-model="data.url"/>
+    </div>
+    <div>
+        <label>method</label>
+        <select ng-model="data.method" ng-options="m for m in ['GET', 'POST', 'PUT', 'DELETE']"></select>
+    </div>
+    <div>
+        <label>data</label>
+        <textarea ng-model="data.data"></textarea>
+    </div>
+    <div>
+        <label>headers</label>
+        <textarea ng-model="data.headers"></textarea>
+    </div>
+    <div>
+        <button type="button" ng-disabled="requestForm.$invalid" ng-click="sendRequest()">Send</button>
+    </div>
+</div>
+<div ng-if="result">
+    <h3>result:</h3>
+    <div>
+        <p ng-if="result.status">
+            <b>status</b>: {{result.status}}
+        </p>
+        <p ng-if="result.headers">
+            <div ng-repeat="(key, value) in result.headers">
+                <b ng-bind="key"></b>: {{value}}
+            </div>
+        </p>
+        <p ng-if="result.data">
+            <b>data</b>: {{result.data}}
+        </p>
+    </div>
+</div>
