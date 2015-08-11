@@ -1,4 +1,4 @@
 module.exports = {
     publicPath: './public',
-    buildPath: './mobile/www'
+    buildPath: './mobile/www/'
 };

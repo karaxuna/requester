@@ -92,11 +92,24 @@ gulp.task('move-images', function () {
         .pipe(gulp.dest(path.join(config.buildPath, 'img')));
 });
 
+gulp.task('install-jxcore-packages', function () {
+    return gulp.src('').pipe(shell([
+        'cd jxcore',
+        'npm install'
+    ]));
+});
+
+gulp.task('move-jxcore', ['install-jxcore-packages'], function () {
+    return gulp.src('./jxcore/**')
+        .pipe(gulp.dest(path.resolve(config.buildPath, './jxcore')));
+});
+
 gulp.task('build', [
     'build-html-assets',
     'move-ngpack-html',
     'move-custom-fonts',
-    'move-images'
+    'move-images',
+    'move-jxcore'
 ], function (){
 
 });

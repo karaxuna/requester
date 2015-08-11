@@ -2,7 +2,21 @@ Create cordova app:
 
     cordova create mobile com.example.requester Requester
 
-Install internal npm modules:
+Clone jxcore cordova plugin
+
+    cd mobile
+    git clone https://github.com/jxcore/jxcore-cordova.git
+
+Add plugin:
+
+    cordova plugins add jxcore-cordova
+
+Add platforms:
+
+    cordova platform add ios
+    cordova platform add android
+
+Install internal npm modules (back to root folder):
 
     npm install
 
@@ -24,4 +38,4 @@ Or build app:
 
     gulp build
     
-After adding platforms and building with `gulp build`, you can build cordova apps. Same code for website and application.
+After adding platforms and building with `gulp build`, you can build cordova apps.

@@ -1,0 +1,9 @@
+{
+  "name": "requester-jxcore",
+  "description": "Requester",
+  "author": "Kakhaber Bazerashvili",
+  "dependencies": {
+    "body-parser": "1.13.3",
+    "express": "4.12.3"
+  }
+}

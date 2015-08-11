@@ -22,19 +22,20 @@ app.use(express.static(path.join(__dirname, staticFolderPath), {
     index: 'none'
 }));
 
-// serve empty cordova
-app.get('/cordova.js', function (req, res) {
-    res.send();
+// serve empty cordova files (static file will be hosted if it's app)
+app.get('/plugins/io.jxcore.node/www/jxcore.js', function (req, res) {
+    res.send('window.jxcore = \'fake\';');
 });
 
-// send request
+app.get('/cordova.js', function (req, res) {
+    res.send('window.cordova = \'fake\';');
+});
+
 /*
-{
     url: String,
     method: String,
     headers: Object,
     data: Object
-}
 */
 app.post('/send', function (req, res) {
     var data = req.body,
